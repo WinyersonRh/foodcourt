@@ -1,0 +1,10 @@
+.questions {
+   width: 20%;
+   padding: 10px;
+   text-align: center;
+   background-color: lightseagreen;
+}
+
+.questions a {
+   display: block;
+}

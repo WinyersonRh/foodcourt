@@ -1,0 +1,11 @@
+/* GENERAL */
+@import url(default.css);
+@import url(nav.css);
+
+/* INFO */
+@import url(info/general.css);
+@import url(info/questions.css);
+@import url(info/info.css);
+
+/* FOOTER */
+@import url(footer.css);

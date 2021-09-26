@@ -1,0 +1,14 @@
+/* GENERAL */
+@import url(default.css);
+@import url(nav.css);
+
+/* TRENDINGS */
+@import url(trendings/general.css);
+@import url(trendings/sections.css);
+@import url(trendings/articles.css);
+@import url(trendings/img.css);
+@import url(trendings/ingredients.css);
+@import url(trendings/chef.css);
+
+/* FOOTER */
+@import url(footer.css);

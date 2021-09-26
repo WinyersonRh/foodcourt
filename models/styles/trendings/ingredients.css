@@ -1,0 +1,27 @@
+.ingredients {
+   display: flex;
+   align-items: center;
+   width: 30%;
+   box-shadow: 0px 0px 8px 2px black;
+   background: url(../../images/presentacion1.jpg) 100% center/cover no-repeat;
+}
+
+.ingredients ul {
+   width: 100%;
+   max-height: 80%;
+   overflow: hidden;
+   padding: 10px 0;
+   background-image: linear-gradient(to right, transparent, #8cf0b2a1, transparent);
+   backdrop-filter: blur(3px);
+}
+
+.ingredients h3 {
+   font-weight: bolder;
+   margin-bottom: 10px;
+}
+
+.ingredients li {
+   margin-bottom: 2px;
+}
+
+.ingredients button {display: none;}

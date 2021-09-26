@@ -1,0 +1,125 @@
+/* POSTERS */
+.posters-container {
+  padding-bottom: 0;
+}
+
+.posters-container * {
+  cursor: default;
+  transition: all 400ms;
+}
+
+.poster {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem auto;
+  border-radius: 2px;
+  opacity: 1;
+  background: var(--black-alpha-color);
+  box-shadow: 0px 0px 4px 2px var(--black-color);
+}
+
+.poster h3 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  opacity: 0;
+  color: var(--white-color);
+  background: var(--black-alpha-color);
+}
+
+.poster img {
+  width: 100%;
+  height: 400px;
+}
+
+.poster p {
+  position: absolute;
+  top: -0;
+  bottom: -0;
+  margin: 0;
+  padding: 5rem 1rem 1rem;
+  opacity: 0;
+  line-height: 2rem;
+  text-align: justify;
+  color: var(--gray-color);
+  background: var(--black-alpha-color);
+}
+
+.poster a {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: center;
+  color: var(--gray-color);
+  background: linear-gradient(to bottom, transparent, var(--black-color) 90%);
+}
+
+.poster a:hover {
+  background: var(--black-color);
+}
+.poster:hover > img {
+  opacity: 0.2;
+}
+.poster:hover p,
+.poster:hover h3 {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 768px) {
+  .posters-container {
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .posters-container h2 {
+    grid-column: span 3;
+  }
+
+  .poster {
+    margin: 0 auto 2rem;
+  }
+
+  .poster h3 {
+    position: relative;
+    font-size: 1rem;
+    opacity: 1;
+    color: var(--gray-color);
+  }
+
+  .poster img {
+    height: 300px;
+  }
+
+  .poster p {
+    padding: 4rem 1rem;
+    line-height: 1.2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .posters-container {
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: space-between;
+  }
+
+  .poster h3 {
+    font-size: 1.5vw;
+  }
+
+  .poster img {
+    height: 350px;
+  }
+
+  .poster p {
+    line-height: 2rem;
+  }
+}

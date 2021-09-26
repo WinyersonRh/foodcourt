@@ -1,0 +1,9 @@
+.trending article {
+   display: flex;
+   justify-content: space-between;
+   background-color: lightcoral;
+}
+
+.trending-img img {
+   width: 500px;
+}

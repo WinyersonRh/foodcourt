@@ -1,0 +1,255 @@
+@import url(default.css);
+
+:root {
+  --first-color: #93a603;
+  --first-alpha-color: rgba(147, 166, 3, 0.75);
+  --second-color: #58734c;
+  --second-alpha-color: rgba(88, 115, 76, 0.75);
+  --third-color: #261919;
+  --third-alpha-color: rgba(38, 25, 25, 0.75);
+  --four-color: #222622;
+  --four-alpha-color: rgb(34, 38, 34, 0.75);
+  --white-color: #fff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --black-color: #000;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --link-color: #496d8c;
+  --title-color: #333;
+  --text-color: #222;
+  --font-default: "Montserrat", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
+  --font-yellowtail: "Yellowtail", sans-serif;
+  --font-pt-sans-narrow: "PT Sans Narrow", sans-serif;
+  --font-trainone: "Train one", cursive;
+  --font-lobster: "Lobster", cursive;
+  --max-width: 1440px;
+  --header-height: 6rem;
+  --footer-height: 4rem;
+  --hero-image: url(comienzos.jpg);
+}
+
+.header {
+  max-height: 4rem;
+}
+
+.header .menu {
+  position: fixed;
+  top: calc(var(--header-height) - 2rem);
+  min-height: calc(100vh - var(--header-height) + 2rem);
+}
+
+/* LOG REG CONTAINER */
+.accounts-container {
+  width: 100%;
+  padding: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  background: var(--third-alpha-color);
+  background: url("../images/chef2.jpg") 0% / cover no-repeat;
+  transition: all 300ms ease;
+}
+
+.accounts-container.hide {
+  transform: translateY(-20%);
+  padding: 0;
+}
+
+.accounts-container h3 {
+  padding: 0 0 1rem;
+  text-align: center;
+  color: var(--gray-color);
+  grid-column: span 2;
+  font-family: var(--font-default);
+}
+
+/* LOG REG BOTONES */
+.login,
+.register {
+  padding: 0.5rem;
+  font-family: var(--font-raleway);
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--gray-color);
+  background: none;
+  transition: all 300ms ease;
+}
+
+.login {
+  color: var(--black-color);
+  background: var(--second-alpha-color);
+}
+.login:hover {
+  background: var(--second-color);
+}
+
+.register {
+  color: var(--second-alpha-color);
+  background: var(--black-alpha-color);
+}
+.register:hover {
+  color: var(--second-color);
+  background: var(--black-color);
+}
+
+/* LOG REG FORMULARIOS */
+.register-form,
+.login-form {
+  width: 100%;
+  padding: 1rem 4rem;
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  text-align: center;
+  color: var(--gray-color);
+  transition: all 400ms ease;
+  backdrop-filter: blur(6px);
+  background: var(--black-alpha-color);
+}
+.register-form {
+  transform: translateX(100%);
+}
+.login-form {
+  transform: translateX(-100%);
+}
+.register-form.show {
+  transform: translateX(0);
+}
+.login-form.show {
+  transform: translateX(0);
+}
+
+/* LOG REG INPUTS */
+.login-form label,
+.register-form label {
+  padding: 0.5rem 0;
+}
+
+.login-form input,
+.register-form input,
+.register-form select {
+  border: 0;
+  outline: none;
+  padding: 5px 1rem;
+  color: var(--second-color);
+  border-bottom: medium solid transparent;
+  background: var(--black-alpha-color);
+  transition: all 300ms ease;
+}
+
+.login-form input:focus,
+.register-form input:focus {
+  border-bottom: medium solid var(--second-color);
+}
+
+.register-form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.register-form select {
+  font-weight: bold;
+}
+.register-form option {
+  color: var(--gray-color);
+  background: var(--four-color);
+}
+
+.login-form input[type="submit"],
+.register-form input[type="submit"] {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 2px;
+  color: var(--black-color);
+  background: var(--second-alpha-color);
+  cursor: pointer;
+}
+.login-form input[type="submit"]:hover,
+.register-form input[type="submit"]:hover {
+  background: var(--second-color);
+}
+
+.login-form a {
+  color: var(--second-color);
+  font-weight: bold;
+  padding: 0.5rem;
+  background: var(--black-alpha-color);
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-position: center/cover;
+  }
+
+  .header .menu {
+    position: unset;
+    min-height: unset;
+  }
+
+  .accounts-container {
+    position: unset;
+    width: 350px;
+    height: 250px;
+    margin: 20vh;
+    padding: 2rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(4px);
+    background: var(--black-alpha-color);
+  }
+
+  .accounts-container h3 {
+    display: none;
+  }
+
+  .login,
+  .register {
+    width: 200px;
+    margin: 1rem auto;
+    padding: 1rem 0;
+    border-radius: 2px;
+    font-size: 1rem;
+    font-family: var(--font-default);
+  }
+
+  .login {
+    color: var(--black-color);
+    background: var(--second-color);
+  }
+  .login:hover {
+    background: var(--second-alpha-color);
+  }
+
+  .register {
+    color: var(--second-color);
+    background: var(--black-color);
+  }
+  .register:hover {
+    color: var(--second-color);
+    background: var(--black-alpha-color);
+  }
+
+  .register-form,
+  .login-form {
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* top: calc(-100% + var(--header-height) + 1.5rem); */
+    background: var(--black-alpha-color);
+  }
+
+  .login-form {
+    right: 0;
+  }
+}

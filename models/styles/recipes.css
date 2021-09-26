@@ -1,0 +1,8 @@
+/* GENERAL */
+@import url(general/default.css);
+@import url(general/nav.css);
+@import url(general/footer.css);
+
+/* RECIPES */
+@import url(recipes/general.css);
+@import url(recipes/recipes.css);

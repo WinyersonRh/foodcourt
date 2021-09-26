@@ -1,0 +1,130 @@
+/* BANNER */
+.banner-container {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.banner h3 {
+  margin: 0 auto 1rem;
+  padding: 1rem;
+  color: var(--gray-color);
+  text-align: center;
+  border-radius: 2px;
+  background: var(--black-alpha-color);
+}
+
+.banner div {
+  position: relative;
+  height: 300px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border-radius: 2px;
+  overflow: hidden;
+  color: var(--gray-color);
+  background: var(--black-alpha-color);
+  box-shadow: 0px 0px 4px 2px black;
+}
+
+.banner img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 280px;
+  transition: all 400ms ease-in;
+}
+
+.banner div:hover img {
+  left: 100%;
+}
+
+.banner p {
+  position: absolute;
+  left: 0;
+  top: -1rem;
+  bottom: -1rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-align: justify;
+  transform: translateX(-100%);
+  background: var(--black-alpha-color);
+  transition: all 400ms ease-in;
+}
+
+.banner div:hover p {
+  transform: translateX(0);
+}
+
+.banner button {
+  position: relative;
+  display: block;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.5rem;
+  font-weight: lighter;
+  background: var(--first-color);
+  transition: all 400ms ease-in-out;
+}
+.banner button::before,
+.banner button::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-width: medium;
+  border-style: solid;
+  transition: all 450ms ease-in-out;
+}
+
+.banner button::before {
+  left: -0.5rem;
+  bottom: -0.5rem;
+  border-color: transparent transparent var(--first-color) var(--first-color);
+}
+
+.banner button::after {
+  top: -0.5rem;
+  right: -0.5rem;
+  border-color: var(--first-color) var(--first-color) transparent transparent;
+}
+
+.banner button:hover::after {
+  top: 0;
+  right: 0;
+}
+.banner button:hover::before {
+  left: 0;
+  bottom: 0;
+}
+
+.banner button:hover {
+  padding: 1rem 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .banner div {
+    display: grid;
+    grid-template-columns: repeat(2, 45% 55%);
+    align-items: center;
+    padding: 0;
+  }
+  .banner p,
+  .banner img {
+    width: 100%;
+    height: 100%;
+    position: unset;
+    transform: none;
+  }
+  .banner button {
+    margin: 2rem auto 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .banner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .banner button {
+    margin: 4rem auto 0;
+  }
+}

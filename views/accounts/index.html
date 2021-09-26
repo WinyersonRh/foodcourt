@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zona de comida</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../models/styles/accounts.css">
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <!-- FONTS FAMILY -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <img src="../../models/images/logo.png" />
+      <h2>Food Court</h2>
+    </div>
+
+    <button class="btn-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
+      </svg>
+    </button>
+
+    <nav class="menu">
+      <a href="../../">Inicio</a>
+      <a href="../recipes/">Recetas</a>
+      <a href="../trendings/">Tendencias</a>
+      <a href="../info/">Información</a>
+      <!-- <button class="lupa"><img width="25px" src="models/images/lupa.png"></button>
+        <form action="#">
+          <input type="text">
+          <input type="submit" hidden>
+        </form> -->
+      <a href="views/accounts/">Cuenta</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- BOTONES -->
+    <section class="section accounts-container">
+      <h3>Bienvenido a nuestra cocina</h3>
+      <button class="login">Iniciar sesión</button>
+      <button class="register">Registrarse</button>
+    </section>
+
+    <section class="login-form">
+      <article>
+        <label for="login-user">Usuario</label>
+        <input type="text" name="user" id="login-user" autocomplete="off">
+        <label for="login-password">Contraseña</label>
+        <input type="password" name="password" id="login-password">
+        <input type="submit" value="Entrar" id="login-btn"> <br>
+        <a href="#">Recuperar datos</a>
+      </article>
+    </section>
+
+    <section class="register-form">
+      <article>
+        <label for="register-user">Usuario</label>
+        <input type="text" name="user" id="register-user" autocomplete="off">
+        <label for="register-password">Contraseña</label>
+        <input type="password" name="password" id="register-password">
+        <label for="register-email">Correo</label>
+        <input type="email" name="email" id="register-email">
+        <label for="register-age">Edad</label>
+        <input type="number" name="age" id="register-age">
+        <label for="register-country">País</label>
+        <select name="country" id="register-country" required>
+          <option value="">Selecciona un país</option>
+          <option value="venezuela">Venezuela</option>
+          <option value="colombia">Colombia</option>
+          <option value="mexico">Mexico</option>
+          <option value="peru">Perú</option>
+          <option value="ecuador">Ecuador</option>
+          <option value="chile">Chile</option>
+          <option value="ee.uu">Estados Unidos</option>
+          <option value="otro">Otro</option>
+        </select>
+        <input type="submit" value="Continuar" id="register-btn">
+      </article>
+    </section>
+  </div>
+
+  <script src="../../controllers/js/menu.js"></script>
+  <script src="../../controllers/js/accounts.js"></script>
+</body>
+
+</html>

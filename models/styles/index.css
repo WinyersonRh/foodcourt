@@ -1,0 +1,17 @@
+/* GENERAL */
+@import url(default.css);
+
+/* CAROUSEL */
+@import url(index/carousel.css);
+
+/* POSTERS */
+@import url(index/poster.css);
+
+/* BANNERS */
+@import url(index/banner.css);
+
+/* PREMIUN */
+@import url(index/premiun.css);
+
+/* SOCIAL */
+@import url(index/social.css);
