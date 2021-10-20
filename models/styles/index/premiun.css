@@ -1,0 +1,62 @@
+/* PREMIUN */
+.premiun-container {
+  padding-bottom: 0;
+}
+
+.premiun {
+  box-shadow: 0px 0px 4px 2px var(--black-color);
+}
+
+.premiun img {
+  margin: 0;
+  width: 100%;
+  max-height: 200px;
+}
+
+.premiun p {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--gray-color);
+  background: var(--black-alpha-color);
+}
+
+.premiun a {
+  border-radius: 1rem;
+  border: medium solid var(--second-color);
+  padding: 5px;
+  color: var(--gray-color);
+  font-weight: bold;
+}
+
+.premiun a:hover {
+  opacity: 1;
+  color: #000;
+  background: var(--second-color);
+}
+
+@media screen and (min-width: 768px) {
+  .premiun {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    align-items: center;
+  }
+  .premiun img {
+    width: 100%;
+  }
+  .premiun p {
+    text-align: center;
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .premiun {
+    width: 90%;
+    margin: auto;
+  }
+  .premiun img {
+    max-height: 350px;
+  }
+}

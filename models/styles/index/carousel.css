@@ -1,0 +1,145 @@
+/* -------------------CAROUSEL-------------------> */
+.btn-left,
+.btn-right {
+  padding: 0.5rem;
+  position: absolute;
+  top: 35%;
+  color: #ccc;
+  font-size: 6vw;
+  background: none;
+  transition: all 400ms ease;
+}
+.btn-left {
+  left: 0;
+}
+.btn-right {
+  right: 0;
+}
+
+.carousel-container {
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #ccc;
+  text-align: center;
+  font-family: "montserrat", sans-serif;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+}
+.carousel > article {
+  width: 85%;
+  display: grid;
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transition: all 800ms ease;
+}
+
+.carousel article:nth-child(1) {
+  transform: translateX(-50%);
+}
+.carousel article:nth-child(2) {
+  transform: translateX(100%);
+}
+.carousel article:nth-child(3) {
+  transform: translateX(150%);
+}
+
+.carousel-img {
+  width: 600px;
+  height: 300px;
+}
+.carousel-img:last-of-type {
+  display: none;
+}
+
+.carousel article p {
+  font-size: 16px;
+}
+
+.dots {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, 30vh);
+  cursor: default;
+}
+
+.dots button {
+  margin: 0 0.5rem;
+  width: 2rem;
+  height: 4px;
+  transition: all 300ms;
+  background: var(--gray-dark-color);
+}
+.dots button:hover {
+  opacity: 0.8;
+}
+.dots button#active {
+  background: var(--first-color);
+}
+
+@media screen and (min-width: 768px) {
+  .btn-left,
+  .btn-right {
+    padding: 1rem;
+    top: 30%;
+    font-size: 4vw;
+  }
+  .btn-left {
+    left: 1rem;
+  }
+  .btn-right {
+    right: 1rem;
+  }
+
+  .btn-left:hover,
+  .btn-right:hover {
+    background: var(--black-alpha-color);
+  }
+
+  .carousel > article {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carousel-img:last-of-type {
+    display: block;
+  }
+
+  .carousel article p {
+    padding: 1rem;
+    font-size: auto;
+  }
+
+  .slide-text {
+    font-size: 2vw;
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel > article {
+    width: 100%;
+    top: 5%;
+    justify-content: center;
+    grid-template-columns: repeat(2, 35%);
+  }
+
+  .carousel .carousel-img {
+    height: 360px;
+  }
+
+  .dots {
+    top: 55%;
+  }
+
+  .slide-text {
+    font-size: 1.5vw;
+  }
+}

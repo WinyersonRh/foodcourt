@@ -1,0 +1,947 @@
+/* GENERAL */
+@import url(default.css);
+
+:root {
+  --first-color: #93a603;
+  --first-alpha-color: rgba(147, 166, 3, 0.75);
+  --second-color: #58734c;
+  --second-alpha-color: rgba(88, 115, 76, 0.75);
+  --third-color: #271212;
+  --third-alpha-color: rgba(39, 18, 18, 0.75);
+  --four-color: #222622;
+  --four-alpha-color: rgb(34, 38, 34, 0.75);
+  --white-color: #fff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --black-color: #000;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --link-color: #496d8c;
+  --title-color: #333;
+  --text-color: #222;
+  --font-default: "Montserrat", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
+  --font-yellowtail: "Yellowtail", sans-serif;
+  --font-pt-sans-narrow: "PT Sans Narrow", sans-serif;
+  --font-trainone: "Train one", cursive;
+  --font-lobster: "Lobster", cursive;
+  --max-width: 1440px;
+  --header-height: 6rem;
+  --footer-height: 4rem;
+  --hero-image: url(comienzos.jpg);
+}
+
+/* SECCION DE TENDENCIAS */
+.trends * {
+  color: #ccc;
+  transition: all 400ms ease;
+}
+
+.trends:first-child {
+  margin-top: calc(var(--header-height) + 2rem);
+}
+
+.trends {
+  margin-top: 3rem;
+  border: thin solid #000;
+  box-shadow: 0 2px 6px #000;
+}
+
+.trends .trend-title {
+  padding: 0.5rem;
+  text-align: center;
+  text-shadow: 2px 2px #000;
+}
+
+/* RECETA EN TENDENCIA */
+.trend-recipe {
+  display: flex;
+  flex-direction: column;
+}
+
+.trend-recipe img {
+  width: 80%;
+  height: 300px;
+  margin: 0 auto;
+  border: thin solid #000;
+}
+
+.trend-recipe .trend-info {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.trend-recipe .trend-info b {
+  color: #999;
+  font-weight: 500;
+  text-shadow: 2px 2px #000;
+}
+
+/* DESCRIPCION DE LA RECETA */
+.trend-description {
+  box-shadow: 2px 0 4px #000;
+  background: var(--black-alpha-color);
+}
+
+.trend-description span {
+  display: flex;
+  width: max-content;
+  padding: 0.5rem 0;
+}
+
+.trend-description span img {
+  width: 35px;
+  height: 35px;
+}
+
+.trend-description span b {
+  padding: 0.5rem;
+  font-weight: 500;
+}
+
+.trend-description p {
+  margin: 0;
+  padding: 0.5rem;
+  border-top: thin solid rgba(153, 153, 153, 0.247);
+}
+
+/* COMENTARIOS DE LA RECETA */
+.trend-comments-container {
+  display: none;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  padding: 1rem;
+  overflow: scroll;
+  box-shadow: 2px 0 4px #000;
+  background: rgb(34, 33, 33);
+}
+
+.trend-comments-container.show {
+  display: block;
+}
+
+.trend-comments-header {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trend-comments-header > h3 {
+  font-size: 1.4rem;
+  font-weight: lighter;
+  text-shadow: 2px 2px #000;
+  font-family: var(--font-raleway);
+}
+
+.trend-comments-header > button {
+  background: none;
+}
+
+.trend-comments-header > button > svg {
+  fill: var(--gray-color);
+  border-radius: 1rem;
+  border: 2px solid var(--gray-color);
+  box-shadow: 0 0 3px 1px #000;
+}
+
+.trend-comment {
+  position: relative;
+  margin-bottom: 1rem;
+  border-bottom: thin solid #9999996e;
+}
+
+.trend-comment span {
+  display: flex;
+  width: max-content;
+}
+
+.trend-comment span img {
+  width: 35px;
+  height: 35px;
+}
+
+.trend-comment span b {
+  padding: 0.5rem;
+  font-weight: 500;
+  text-shadow: 2px 2px #000;
+}
+
+.trend-comment i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  font-size: 12px;
+}
+
+/* ACCIONES */
+.trend-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 4px #000;
+  background: var(--black-alpha-color);
+}
+
+.trend-actions button {
+  height: 3rem;
+}
+
+.trend-actions button:nth-child(2n) {
+  border-left: thin solid #9999993f;
+  border-right: thin solid #9999993f;
+}
+
+.trend-actions button svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--gray-dark-color);
+}
+.trend-actions button:last-child svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* COMENTAR */
+.trend-send-comment {
+  width: 100%;
+  box-shadow: 0 2px 4px #000;
+  background: var(--black-alpha-color);
+}
+
+.trend-send-comment form {
+  position: relative;
+  padding: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.trend-send-comment form textarea {
+  width: 100%;
+  min-height: 2rem;
+  border: 0;
+  resize: none;
+  outline: none;
+  color: #ccc;
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  font-family: var(--font-raleway);
+  background: var(--black-alpha-color);
+}
+
+.trend-send-comment label {
+  position: absolute;
+  height: 2rem;
+  right: 1rem;
+  bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.trend-send-comment label svg {
+  fill: var(--gray-color);
+}
+
+.trend-send-comment form input {
+  border: 0;
+  padding: 0.5rem;
+  background: var(--black-alpha-color);
+}
+
+/* MODALES */
+.trend-modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  background: var(--black-alpha-color);
+}
+
+.trend-modal.show {
+  display: flex;
+}
+
+/* VISTA PREVIA */
+.preview-modal {
+  width: 85%;
+  height: 450px;
+  display: none;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 4px;
+  border: thin solid #ccc;
+  box-shadow: 2px 2px 4px #000;
+  background: var(--third-color);
+}
+
+.preview-modal span {
+  cursor: pointer;
+  position: absolute;
+  color: #ccc;
+  top: 0.5rem;
+  right: 1rem;
+  font-family: var(--font-pt-sans-narrow);
+  font-size: 1.4rem;
+  text-shadow: 2px 2px #000;
+  transition: all 100ms ease;
+}
+
+.preview-modal span:hover {
+  color: #999;
+}
+
+.preview-modal h3 {
+  width: 100%;
+  padding: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+  background: var(--black-alpha-color);
+}
+
+.preview-modal img {
+  width: 100%;
+  height: 300px;
+}
+
+.preview-modal p {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  overflow: scroll;
+}
+
+.preview-modal.show {
+  display: flex;
+}
+
+/* COMPARTIR */
+.share-modal {
+  width: 85%;
+  height: 450px;
+  display: none;
+  position: relative;
+  flex-direction: column;
+  border: thin solid #ccc;
+  border-radius: 4px;
+  box-shadow: 2px 2px 4px #000;
+  background: var(--third-color);
+}
+
+.share-modal header {
+  display: flex;
+  align-items: center;
+  background: var(--black-alpha-color);
+}
+
+.share-modal header span {
+  cursor: pointer;
+  position: absolute;
+  color: #ccc;
+  top: 0.5rem;
+  right: 1rem;
+  font-family: var(--font-pt-sans-narrow);
+  font-size: 1.2rem;
+  text-shadow: 2px 2px #000;
+  transition: all 100ms ease;
+}
+
+.share-modal header span:hover {
+  color: #999;
+}
+
+.share-modal header img {
+  width: 35px;
+  height: 35px;
+}
+
+.share-modal header h3 {
+  padding-left: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  text-shadow: 2px 2px #000;
+}
+
+.share-modal .share-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.share-modal .share-form textarea {
+  width: 90%;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  outline: none;
+  border: 0;
+  resize: none;
+  font-family: var(--font-yellowtail);
+  background: var(--black-alpha-color);
+}
+
+.share-modal .share-form input {
+  width: 90%;
+  padding: 0.5rem;
+  margin: 0 auto 1rem;
+  border: 0;
+  outline: none;
+  box-shadow: 2px 2px 4px #000;
+  background: var(--black-alpha-color);
+  cursor: pointer;
+}
+
+.share-modal .share-this {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.share-modal .share-this h3 {
+  position: absolute;
+  width: 100%;
+  padding: 0.5rem;
+  opacity: 0.8;
+  text-align: center;
+  font-weight: 500;
+  background: var(--black-color);
+}
+
+.share-modal .share-this img {
+  height: 300px;
+}
+
+.share-modal.show {
+  display: flex;
+}
+
+/* REPORTAR/QUITAR MODAL */
+.quit-modal {
+  width: 85%;
+  height: 250px;
+  padding: 1rem;
+  display: none;
+  position: relative;
+  border: thin solid #ccc;
+  border-radius: 4px;
+  flex-direction: column;
+  box-shadow: 2px 2px 4px #000;
+  background: var(--third-color);
+}
+
+.quit-modal form {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.quit-modal form span {
+  cursor: pointer;
+  position: absolute;
+  color: #ccc;
+  top: 0.5rem;
+  right: 1rem;
+  font-family: var(--font-pt-sans-narrow);
+  font-size: 1.2rem;
+  text-shadow: 2px 2px #000;
+  transition: all 100ms ease;
+}
+
+.quit-modal form span:hover {
+  color: #999;
+}
+
+.quit-modal form label {
+  font-size: 1.5rem;
+}
+
+.quit-modal form textarea {
+  width: 100%;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  outline: none;
+  border: 0;
+  resize: none;
+  font-family: var(--font-yellowtail);
+  background: var(--black-alpha-color);
+}
+
+.quit-modal form input {
+  width: 50%;
+  padding: 0.8rem;
+  margin: 0 auto 1rem;
+  border: 0;
+  outline: none;
+  box-shadow: 2px 2px 4px #000;
+  background: var(--black-alpha-color);
+  cursor: pointer;
+}
+
+.quit-modal.show {
+  display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .trendings-container {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .trends {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  /* SECCION DE TENDENCIAS */
+  .trends .trend-title {
+    width: 50%;
+    grid-column: span 2;
+  }
+
+  /* RECETA EN TENDENCIA */
+  .trend-recipe {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-column: span 2;
+  }
+
+  .trend-recipe img {
+    width: 100%;
+  }
+
+  .trend-recipe .trend-info {
+    width: 40%;
+    height: max-content;
+    position: absolute;
+    right: 4rem;
+    top: inherit;
+    border-bottom: thin solid #99999933;
+  }
+
+  /* DESCRIPCION DE LA RECETA */
+  .trend-description {
+    box-shadow: none;
+    border-bottom: thin solid #000;
+  }
+
+  .trend-description span {
+    padding: 3rem 0.5rem 0.5rem;
+  }
+
+  .trend-description span img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .trend-description span b {
+    font-weight: 500;
+  }
+
+  .trend-description p {
+    border-top: unset;
+  }
+
+  /* COMENTARIOS DE LA RECETA */
+  .trend-comments-header {
+    width: 80%;
+    margin: 0 auto 4rem;
+  }
+
+  .trend-comment {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  /* ACCIONES */
+  .trend-actions {
+    justify-content: right;
+    box-shadow: 0 2px #000;
+  }
+
+  .trend-actions button:last-child {
+    border-right: 0;
+  }
+
+  /* COMENTAR */
+  .trend-send-comment {
+    box-shadow: 0 2px #000;
+  }
+
+  .trend-send-comment form textarea {
+    min-height: 3rem;
+    padding: 1rem;
+  }
+
+  /* VISTA PREVIA */
+  .preview-modal {
+    width: 60%;
+  }
+
+  /* COMPARTIR */
+  .share-modal {
+    width: 60%;
+    height: 450px;
+  }
+
+  /* REPORTAR/QUITAR MODAL */
+  .quit-modal {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .trendings-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: calc(var(--header-height) + 2rem);
+  }
+
+  .trends:first-child {
+    margin-top: auto;
+  }
+
+  .trends {
+    margin: 2rem 0.5rem;
+  }
+
+  /* SECCION DE TENDENCIAS */
+  .trends .trend-title {
+    width: 100%;
+    background: var(--black-alpha-color);
+  }
+
+  /* RECETA EN TENDENCIA */
+  .trend-recipe {
+    display: flex;
+  }
+
+  .trend-recipe img {
+    width: 100%;
+    height: 350px;
+    cursor: pointer;
+  }
+
+  .trend-recipe img:hover {
+    box-shadow: 0 0 4px 2px var(--first-color);
+  }
+
+  .trend-recipe .trend-info {
+    width: 100%;
+    right: unset;
+    position: relative;
+    padding: 0.5rem 1rem;
+  }
+
+  /* DESCRIPCION DE LA RECETA */
+  .trend-description {
+    height: 4rem;
+    overflow: hidden;
+    box-shadow: none;
+    border-bottom: thin solid #000;
+  }
+
+  .trend-description span {
+    display: none;
+    padding: 0;
+  }
+
+  .trend-description span img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .trend-description span b {
+    font-weight: 500;
+  }
+
+  .trend-description p {
+    border-top: unset;
+  }
+
+  /* COMENTARIOS DE LA RECETA */
+  .trend-comments-container {
+    display: block;
+    width: 100%;
+    height: 0;
+    position: relative;
+    padding: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    box-shadow: 2px 0 4px #000;
+    background: rgb(34, 33, 33);
+  }
+
+  .trend-comments-container.show {
+    padding: 1rem;
+    height: 10rem;
+  }
+
+  .trend-comments-container::-webkit-scrollbar {
+    width: 5px;
+    background: var(--black-alpha-color);
+  }
+  .trend-comments-container::-webkit-scrollbar-thumb {
+    border: thin solid #000;
+    background: var(--second-color);
+  }
+
+  .trend-comments-header {
+    display: none;
+  }
+
+  .trend-comment {
+    width: 100%;
+    position: relative;
+    margin-bottom: 1rem;
+    border-bottom: thin solid #9999996e;
+  }
+
+  /* ACCIONES */
+  .trend-actions {
+    width: 100%;
+    height: 3rem;
+    padding: 0;
+    grid-column: span 2;
+    box-shadow: 0 2px #000;
+    background: var(--black-alpha-color);
+  }
+
+  .trend-actions.show {
+    width: 5rem;
+  }
+
+  .trend-actions button {
+    height: 100%;
+    background: none;
+  }
+
+  .trend-actions button:nth-child(2n) {
+    border: 0;
+  }
+
+  .trend-actions button:hover {
+    background: var(--black-alpha-color);
+  }
+
+  /* COMENTAR */
+  .trend-send-comment {
+    grid-column: span 2;
+    box-shadow: 0 2px #000;
+  }
+
+  .trend-send-comment form textarea {
+    padding: 0.5rem;
+    min-height: 2rem;
+  }
+
+  .trend-send-comment label:hover {
+    cursor: pointer;
+  }
+
+  .trend-send-comment label svg {
+    transition: all 100ms ease;
+  }
+
+  .trend-send-comment label svg:hover {
+    fill: var(--gray-dark-color);
+  }
+
+  /* VISTA PREVIA */
+  .preview-modal {
+    width: 35%;
+  }
+
+  .preview-modal p {
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  .preview-modal p::-webkit-scrollbar {
+    width: 0.5rem;
+    background: var(--black-alpha-color);
+  }
+
+  .preview-modal p::-webkit-scrollbar-thumb {
+    border: thin solid #000;
+    background: var(--second-alpha-color);
+  }
+
+  /* COMPARTIR */
+  .share-modal {
+    width: 35%;
+    height: max-content;
+    display: none;
+    position: relative;
+    flex-direction: column;
+    border: thin solid #ccc;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px #000;
+    background: var(--third-color);
+  }
+
+  .share-modal header {
+    display: flex;
+    align-items: center;
+    background: var(--black-alpha-color);
+  }
+
+  .share-modal header span {
+    cursor: pointer;
+    position: absolute;
+    color: #ccc;
+    top: 0.5rem;
+    right: 1rem;
+    font-family: var(--font-pt-sans-narrow);
+    font-size: 1.4rem;
+    text-shadow: 2px 2px #000;
+    transition: all 100ms ease;
+  }
+
+  .share-modal header span:hover {
+    color: #999;
+  }
+
+  .share-modal header img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .share-modal header h3 {
+    padding-left: 1rem;
+    font-weight: 500;
+    text-shadow: 2px 2px #000;
+  }
+
+  .share-modal .share-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .share-modal .share-form textarea {
+    width: 90%;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    outline: none;
+    border: 0;
+    resize: none;
+    font-family: var(--font-yellowtail);
+    background: var(--black-alpha-color);
+  }
+
+  .share-modal .share-form input {
+    width: 90%;
+    padding: 0.5rem;
+    margin: 0 auto 1rem;
+    border: 0;
+    outline: none;
+    box-shadow: 2px 2px 4px #000;
+    background: var(--black-alpha-color);
+    cursor: pointer;
+  }
+
+  .share-modal .share-this {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .share-modal .share-this h3 {
+    position: absolute;
+    width: 100%;
+    padding: 0.5rem;
+    opacity: 0.8;
+    text-align: center;
+    font-weight: 500;
+    background: var(--black-color);
+  }
+
+  .share-modal .share-this img {
+    height: 300px;
+  }
+
+  .share-modal.show {
+    display: flex;
+  }
+
+  /* REPORTAR/QUITAR MODAL */
+  .quit-modal {
+    width: 35%;
+    height: max-content;
+    padding: 1rem;
+    display: none;
+    position: relative;
+    border: thin solid #ccc;
+    border-radius: 4px;
+    flex-direction: column;
+    box-shadow: 2px 2px 4px #000;
+    background: var(--third-color);
+  }
+
+  .quit-modal form {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .quit-modal form span {
+    cursor: pointer;
+    position: absolute;
+    color: #ccc;
+    top: 0.5rem;
+    right: 1rem;
+    font-family: var(--font-pt-sans-narrow);
+    font-size: 1.4rem;
+    text-shadow: 2px 2px #000;
+    transition: all 100ms ease;
+  }
+
+  .quit-modal form span:hover {
+    color: #999;
+  }
+
+  .quit-modal form label {
+    font-size: 1.5rem;
+  }
+
+  .quit-modal form textarea {
+    width: 100%;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    outline: none;
+    border: 0;
+    resize: none;
+    font-family: var(--font-yellowtail);
+    background: var(--black-alpha-color);
+  }
+
+  .quit-modal form input {
+    width: 50%;
+    padding: 0.8rem;
+    margin: 0 auto 1rem;
+    border: 0;
+    outline: none;
+    box-shadow: 2px 2px 4px #000;
+    background: var(--black-alpha-color);
+    cursor: pointer;
+  }
+
+  .quit-modal.show {
+    display: flex;
+  }
+}

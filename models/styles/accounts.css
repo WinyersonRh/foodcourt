@@ -1,0 +1,372 @@
+@import url(default.css);
+
+body {
+  background: url(../images/chef2.jpg) 20% / cover no-repeat;
+}
+
+.header {
+  top: unset;
+  bottom: 0%;
+  max-height: 4rem;
+}
+
+.header .menu {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  min-height: calc(100vh - var(--header-height) + 2rem);
+  backdrop-filter: blur(2px);
+}
+
+/* LOG REG CONTAINER */
+.accounts-container {
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+}
+
+/* LOG REG BOTONES */
+.show-btn {
+  position: fixed;
+  width: 100%;
+  height: 7rem;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--gray-color);
+  text-shadow: 2px 2px #000;
+  font: 500 var(--font-default);
+  background: var(--third-color);
+  transition: all 400ms ease;
+}
+
+.show-login,
+.show-register {
+  position: relative;
+  margin: 1rem 0.5rem 0;
+  padding: 0.5rem;
+  text-align: center;
+  color: var(--gray-color);
+  text-shadow: 2px 2px #000;
+  font: 1.2rem var(--font-raleway);
+  border-bottom: 1.5px solid var(--gray-color);
+  background: transparent;
+  transition: all 400ms ease;
+}
+
+.show-login.active::after,
+.show-register.active::after {
+  content: "";
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0.5rem solid;
+  border-color: var(--gray-color) transparent transparent;
+}
+
+/* LOG REG FORMULARIOS */
+.login-form,
+.register-form {
+  position: fixed;
+  left: 0;
+  top: -100%;
+  bottom: 100%;
+  width: 100%;
+  padding: 1rem 2rem 2rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  text-align: center;
+  color: var(--gray-color);
+  transition: all 400ms ease;
+  backdrop-filter: blur(2px);
+  background: var(--third-alpha-color);
+}
+
+.login-form.show,
+.register-form.show {
+  top: 3.5rem;
+  bottom: var(--footer-height);
+}
+
+/* LOG REG INPUTS */
+.user-center {
+  padding-top: 20%;
+}
+
+#login-form-close,
+#register-form-close {
+  display: none;
+}
+
+.login-form label,
+.register-form label {
+  display: block;
+  margin: 0.5rem auto;
+  text-shadow: 2px 2px #000;
+}
+
+.login-form input,
+.register-form input,
+.register-form select {
+  border: 0;
+  outline: none;
+  overflow: scroll;
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  color: var(--gray-color);
+  border-bottom: 2px solid var(--gray-dark-color);
+  background: var(--black-alpha-color);
+  transition: all 300ms ease;
+}
+
+.login-form input:focus,
+.register-form input:focus {
+  border-bottom: 2px solid var(--gray-color);
+}
+
+.register-form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.register-form select {
+  overflow: scroll;
+  font-weight: bold;
+}
+
+.register-form option {
+  color: var(--gray-color);
+  background: var(--four-color);
+}
+
+.login-form input[type="submit"],
+.register-form input[type="submit"] {
+  width: 12rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: var(--gray-color);
+  border-radius: 2px;
+  border: 2px solid var(--gray-color);
+  background: var(--third-alpha-color);
+  cursor: pointer;
+}
+.login-form input[type="submit"]:hover,
+.register-form input[type="submit"]:hover {
+  background: var(--black-alpha-color);
+}
+
+.login-form a {
+  width: 12rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-color);
+  padding: 0.5rem 5px;
+  border: 2px solid #ccc;
+  background: var(--black-alpha-color);
+}
+.login-form a svg {
+  fill: var(--gray-color);
+  margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-position: center/cover;
+  }
+
+  .header {
+    top: 0;
+    bottom: unset;
+    padding: 0 2rem;
+    border: 0;
+    justify-content: space-between;
+  }
+
+  .header .menu {
+    position: unset;
+    display: flex;
+    flex-direction: row;
+    min-height: auto;
+  }
+
+  .accounts-container {
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* LOG REG BOTONES */
+  .show-btn {
+    width: 20rem;
+    margin: 0;
+    position: absolute;
+    left: 45%;
+    box-shadow: 2px 2px 4px #000;
+  }
+
+  .show-login,
+  .show-register {
+    margin: 1rem 0.5rem 0;
+  }
+
+  /* LOG REG FORMULARIOS */
+  .login-form,
+  .register-form {
+    display: none;
+    position: absolute;
+    top: 5%;
+    left: 45%;
+    width: 20rem;
+    height: 20rem;
+    opacity: 0;
+    justify-content: space-between;
+    background: var(--third-color);
+  }
+  .register-form {
+    height: 24rem;
+  }
+
+  .login-form.show,
+  .register-form.show {
+    opacity: 1;
+    top: 25%;
+  }
+
+  /* LOG REG INPUTS */
+  .user-center {
+    padding-top: unset;
+  }
+
+  #login-form-close,
+  #register-form-close {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    fill: var(--gray-dark-color);
+  }
+
+  #login-form-close.show,
+  #register-form-close.show {
+    display: block;
+  }
+
+  #login-form-close.show:hover,
+  #register-form-close.show:hover {
+    fill: var(--gray-color);
+  }
+
+  .register-form input,
+  .register-form select {
+    margin: 0.5rem auto;
+  }
+
+  .register-form input[type="submit"] {
+    width: 100%;
+    grid-column: span 2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* LOG REG BOTONES */
+  .show-btn {
+    position: fixed;
+    top: 5rem;
+    display: grid;
+    width: 25rem;
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .show-btn h3 {
+    grid-column: span 2;
+  }
+
+  .show-login,
+  .show-register {
+    border: 0;
+    background: var(--third-color);
+    box-shadow: 2px 2px 6px #000;
+  }
+  .show-login:hover,
+  .show-register:hover {
+    background: var(--black-alpha-color);
+  }
+
+  /* LOG REG FORMULARIOS */
+  .login-form,
+  .register-form {
+    display: block;
+    justify-content: space-between;
+    position: fixed;
+    width: 25rem;
+    height: 0rem;
+    opacity: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    background: var(--third-color);
+    box-shadow: 2px 2px 6px #000;
+  }
+  .login-form {
+    overflow: hidden;
+  }
+
+  .register-form::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0.5rem;
+    background: var(--black-alpha-color);
+  }
+  .register-form::-webkit-scrollbar-thumb {
+    border: 1px solid rgba(204, 204, 204, 0.459);
+    background-color: var(--third-color);
+  }
+
+  .login-form.show {
+    opacity: 1;
+    height: 22rem;
+  }
+  .register-form.show {
+    opacity: 1;
+    height: 28rem;
+  }
+
+  .user-center,
+  .name-center {
+    padding-top: 2.5rem;
+  }
+
+  #login-form-close.show,
+  #register-form-close.show {
+    display: none;
+  }
+
+  .register-form input,
+  .register-form select {
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+  }
+
+  .register-form input:focus {
+    border-bottom: 2px solid var(--gray-color);
+  }
+
+  .register-form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .register-form option {
+    color: var(--gray-color);
+    background: var(--four-color);
+  }
+
+  .login-form input[type="submit"],
+  .register-form input[type="submit"] {
+    overflow: unset;
+    grid-column: span 4;
+    width: 12rem;
+  }
+}
